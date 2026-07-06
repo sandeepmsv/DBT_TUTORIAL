@@ -174,3 +174,22 @@ PS>dbt run
 
 (dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
 (dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>git add .
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>git commit -m "bronze layer"
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../terminal_history_20260706_172039.log
+        modified:   ../terminal_history_20260706_172144.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(dbt-tutorial) ]633;D;1]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
