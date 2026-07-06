@@ -216,6 +216,45 @@ To save all terminal interaction for later review, use the project helper script
 
 This captures everything in the session, including the exact commands you used and the dbt output.
 
+## Command Log Summary
+
+The following commands have been used during this session and should be treated as the working workflow for the project:
+
+```powershell
+cd "c:\Users\sande\OneDrive\Documents\DBT_TUTORIAL"
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+.\.venv\Scripts\Activate.ps1
+cd sandeep_dbt_tutorial
+dbt clean
+uv run dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+```
+
+To append future commands automatically, run:
+
+```powershell
+.\log-terminal-command.ps1
+```
+
+For fully automatic capture without running any extra command, use the background helper script:
+
+```powershell
+.\AutoCaptureTerminal.ps1
+```
+
+For a lighter workflow that records every 2 minutes and keeps only the important terminal notes in the README, use:
+
+```powershell
+.\CaptureTerminalSummary.ps1
+```
+
+If you want it to start automatically without any manual action, run:
+
+```cmd
+start_auto_capture.cmd
+```
+
+This starts the background capture process for you and keeps summarizing the important terminal activity in the README.
+
 ## Detailed Technical Explanation
 
 ### 1. `uv sync`

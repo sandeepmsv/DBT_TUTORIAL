@@ -3,5 +3,6 @@
         "sandeep_dbt_tutorial": {
             "deferToProduction": false
         }
-    }
+    },
+    "dbt.queryLimit": 10
 }

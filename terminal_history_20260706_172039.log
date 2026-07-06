@@ -1,0 +1,176 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260706172039
+Username: SANDEEPS_PC\sande
+RunAs User: SANDEEPS_PC\sande
+Configuration Name: 
+Machine: SANDEEPS_PC (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\sande\AppData\Local\Programs\Microsoft VS Code\4fe60c8b1c\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 15124
+PSVersion: 5.1.26100.8737
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.8737
+BuildVersion: 10.0.26100.8737
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\terminal_history_20260706_172039.log
+Terminal logging started. Output is being written to: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\terminal_history_20260706_172039.log
+When finished, run: Stop-Transcript
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+PS>dir
+
+
+    Directory: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+dar--l        06-07-2026     15:32                .venv
+dar--l        06-07-2026     16:44                .vscode
+dar--l        06-07-2026     16:06                logs
+dar--l        06-07-2026     16:56                sandeep_dbt_tutorial
+-a---l        06-07-2026     15:31              4 .python-version
+-a---l        06-07-2026     15:32            310 main.py
+-a---l        06-07-2026     15:41           2573 pyproject.toml
+-a---l        06-07-2026     16:34          12660 README.md
+-a---l        06-07-2026     15:40           3032 requirements.txt
+-a---l        06-07-2026     16:34            420 start-terminal-log.ps1
+-a----        06-07-2026     17:20           1262 terminal_history_20260706_172039.log
+-a---l        06-07-2026     15:41         282452 uv.lock
+
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+PS>cd sandeep_dbt_tutorial
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>ls
+
+
+    Directory: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+dar--l        06-07-2026     16:07                analyses
+d----l        06-07-2026     16:56                dbt_packages
+dar--l        06-07-2026     16:12                logs
+dar--l        06-07-2026     16:07                macros
+dar--l        06-07-2026     16:59                models
+dar--l        06-07-2026     16:07                seeds
+dar--l        06-07-2026     16:07                snapshots
+dar--l        06-07-2026     17:20                target
+dar--l        06-07-2026     16:07                tests
+-a---l        06-07-2026     15:37             29 .gitignore
+-a---l        06-07-2026     16:56             42 .user.yml
+-a---l        06-07-2026     17:14           1310 dbt_project.yml
+-a---l        06-07-2026     16:29            384 profiles.yml
+-a---l        06-07-2026     15:37            571 README.md
+
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>ls -lrt
+>> TerminatingError(Get-ChildItem): "A parameter cannot be found that matches parameter name 'lrt'."
+Get-ChildItem : A parameter cannot be found that matches parameter name 'lrt'.
+At line:1 char:4
++ ls -lrt
++    ~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemCommand
+Get-ChildItem : A parameter cannot be found that matches parameter name 'lrt'.
+At line:1 char:4
++ ls -lrt
++    ~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Get-ChildItem], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetChildItemComm
+   and
+
+(dbt-tutorial) ]633;D;1]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>cd "c:\Users\sande\OneDrive\Documents\DBT_TUTORIAL"
+.\start-terminal-log.ps1
+Transcript started, output file is C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\terminal_history_20260706_172144.log
+Terminal logging started. Output is being written to: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\terminal_history_20260706_172144.log
+When finished, run: Stop-Transcript
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+PS>ls
+
+
+    Directory: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+dar--l        06-07-2026     15:32                .venv
+dar--l        06-07-2026     16:44                .vscode
+dar--l        06-07-2026     16:06                logs
+dar--l        06-07-2026     16:56                sandeep_dbt_tutorial
+-a---l        06-07-2026     15:31              4 .python-version
+-a---l        06-07-2026     15:32            310 main.py
+-a---l        06-07-2026     15:41           2573 pyproject.toml
+-a---l        06-07-2026     16:34          12660 README.md
+-a---l        06-07-2026     15:40           3032 requirements.txt
+-a---l        06-07-2026     16:34            420 start-terminal-log.ps1
+-a----        06-07-2026     17:21           6496 terminal_history_20260706_172039.log
+-a----        06-07-2026     17:21           1262 terminal_history_20260706_172144.log
+-a---l        06-07-2026     15:41         282452 uv.lock
+
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIALPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL> ]633;B
+PS>cd .\sandeep_dbt_tutorial\
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>ls
+
+
+    Directory: C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+dar--l        06-07-2026     16:07                analyses
+d----l        06-07-2026     16:56                dbt_packages
+dar--l        06-07-2026     16:12                logs
+dar--l        06-07-2026     16:07                macros
+dar--l        06-07-2026     16:59                models
+dar--l        06-07-2026     16:07                seeds
+dar--l        06-07-2026     16:07                snapshots
+dar--l        06-07-2026     17:20                target
+dar--l        06-07-2026     16:07                tests
+-a---l        06-07-2026     15:37             29 .gitignore
+-a---l        06-07-2026     16:56             42 .user.yml
+-a---l        06-07-2026     17:14           1310 dbt_project.yml
+-a---l        06-07-2026     16:29            384 profiles.yml
+-a---l        06-07-2026     15:37            571 README.md
+
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>dbt run
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>dbt clean
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+PS>dbt run
+
+(dbt-tutorial) ]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
+(dbt-tutorial) ]633;D]633;A]633;P;Cwd=C:\x5cUsers\x5csande\x5cOneDrive\x5cDocuments\x5cDBT_TUTORIAL\x5csandeep_dbt_tutorialPS C:\Users\sande\OneDrive\Documents\DBT_TUTORIAL\sandeep_dbt_tutorial> ]633;B
