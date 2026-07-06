@@ -1,0 +1,7 @@
+{
+    "dbt.deferConfigPerProject": {
+        "sandeep_dbt_tutorial": {
+            "deferToProduction": false
+        }
+    }
+}

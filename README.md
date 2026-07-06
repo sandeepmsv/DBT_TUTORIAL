@@ -177,6 +177,127 @@ uv lock
 uv sync
 ```
 
+## Terminal Commands Used
+
+These are the commands used during setup, troubleshooting, and verification:
+
+```powershell
+cd "c:\Users\sande\OneDrive\Documents\DBT_TUTORIAL"
+uv sync
+uv run python main.py
+uv run python --version
+uv run dbt debug --profiles-dir "%USERPROFILE%\.dbt"
+uv cache clean
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force
+powershell -ExecutionPolicy Bypass -File .\.venv\Scripts\Activate.ps1
+```
+
+## Capture Terminal Activity
+
+To save all terminal interaction for later review, use the project helper script.
+
+1. Open PowerShell in the project root:
+   ```powershell
+   cd "c:\Users\sande\OneDrive\Documents\DBT_TUTORIAL"
+   ```
+2. Start logging:
+   ```powershell
+   .\start-terminal-log.ps1
+   ```
+3. Work as normal. All commands and output will be written to the generated log file.
+4. When finished, stop logging:
+   ```powershell
+   Stop-Transcript
+   ```
+5. Review the log file in the project root, for example:
+   ```powershell
+   Get-ChildItem terminal_history_*.log
+   ```
+
+This captures everything in the session, including the exact commands you used and the dbt output.
+
+## Detailed Technical Explanation
+
+### 1. `uv sync`
+- Reads `.python-version` and chooses Python 3.12.
+- Reads `pyproject.toml` and installs dependencies in a local `.venv/`.
+- Creates a reproducible virtual environment that isolates this project from the system Python.
+
+### 2. `uv run python main.py`
+- Runs `main.py` inside the `.venv` without requiring manual activation.
+- Ensures the code uses the exact interpreter from `.venv\Scripts\python.exe`.
+
+### 3. `uv run python --version`
+- Verifies the project is using Python 3.12 as configured.
+- Confirms the virtual environment is active for these commands.
+
+### 4. `uv run dbt debug --profiles-dir "%USERPROFILE%\.dbt"`
+- Runs dbt using the local environment and the user profile directory.
+- Ensures dbt loads `profiles.yml` from `C:\Users\sande\.dbt`.
+- Useful when `uv` is available but shell activation is unnecessary.
+
+### 5. `uv cache clean`
+- Clears uv's local cache if dependency resolution or installs behave incorrectly.
+- Not usually required, but helpful during troubleshooting.
+
+### 6. `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned -Force`
+- Allows PowerShell to run local scripts such as `.venv\Scripts\Activate.ps1`.
+- Needed when Windows blocks script execution for security reasons.
+
+### 7. `powershell -ExecutionPolicy Bypass -File .\.venv\Scripts\Activate.ps1`
+- Runs the venv activation script once without changing the global policy.
+- Useful when you want to avoid permanently changing PowerShell execution policy.
+
+### Why the Databricks auth fix was required
+- Your dbt profile originally used `token:`, which Databricks rejects for this connection type.
+- For Databricks SQL warehouse connections, dbt expects:
+  - `personal_access_token:`
+  - `auth_type: oauth`
+- The final working profile section is:
+
+```yaml
+sandeep_dbt_tutorial:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: dbc-db9c4f4b-27ab.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/ce8541004af1742c
+      catalog: dbt_tutorial_dev
+      schema: default
+      threads: 1
+      auth_type: oauth
+      personal_access_token: <your_databricks_pat>
+```
+
+### Why the `profiles.yml` path matters
+- dbt looks for `profiles.yml` in `%USERPROFILE%\.dbt` by default.
+- Your project `dbt_project.yml` references `profile: 'sandeep_dbt_tutorial'`.
+- That profile name must match the key inside `profiles.yml`.
+
+### Why `uv run` is usually better than manual activation
+- `uv run` automatically uses the `.venv` interpreter.
+- It avoids PowerShell activation issues and execution policy problems.
+- This is why `uv run dbt debug --profiles-dir "%USERPROFILE%\.dbt"` worked even when manual activation was blocked.
+
+### Important security note
+- Treat the Databricks PAT like a password.
+- Do not share it publicly.
+- If it is exposed, revoke it in Databricks and generate a new one.
+
+### Databricks PAT generation steps
+1. Open Databricks in your browser.
+2. Click your user icon in the top-right corner.
+3. Choose **User Settings** or **Account Settings**.
+4. Open the **Access Tokens** tab.
+5. Generate a new token and copy it immediately.
+6. Use that token in `profiles.yml` as `personal_access_token:`.
+
+### Exact `profiles.yml` field update path
+- File: `C:\Users\sande\.dbt\profiles.yml`
+- Replace `token:` with `personal_access_token:`
+- Add `auth_type: oauth` under the Databricks output configuration
+
 ## Troubleshooting
 
 ### Python 3.12 Not Found
@@ -194,6 +315,66 @@ uv sync --python 3.12
 Remove-Item .venv -Recurse -Force
 uv sync
 ```
+
+### dbt Database Connection Error
+If dbt fails with a credential error like:
+
+> Credential was not sent or was of an unsupported type for this API.
+
+then your database profile is not sending the correct auth method.
+
+Check these items:
+- `profiles.yml` is in your user `%USERPROFILE%\.dbt\profiles.yml` or use `--profiles-dir`
+- The profile `name` matches `profile:` in `sandeep_dbt_tutorial/dbt_project.yml`
+- The adapter `type:` matches your target database
+- You are using the correct credential fields for that adapter
+  - e.g. Databricks needs `personal_access_token` and `host`/`http_path`
+  - e.g. Snowflake often uses `user`, `password`, `account`, `role`
+- Environment variables are set before running dbt in PowerShell:
+```powershell
+$env:DBT_USER = "your_user"
+$env:DBT_PASSWORD = "your_password"
+```
+- Run dbt debug to verify the connection:
+```powershell
+uv run dbt debug
+```
+
+If the database requires token auth, do not use a password field unless the adapter expects it.
+
+### Databricks Specific Fix
+If your profile uses `type: databricks` and the connection fails with:
+
+> Credential was not sent or was of an unsupported type for this API.
+
+then your token field or token type is likely wrong. For Databricks SQL warehouses, use a valid personal access token and this format:
+
+```yaml
+sandeep_dbt_tutorial:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      host: dbc-db9c4f4b-27ab.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/ce8541004af1742c
+      catalog: dbt_tutorial_dev
+      schema: default
+      threads: 1
+      personal_access_token: <your_databricks_pat>
+```
+
+If your profile currently uses `token:`, replace it with `personal_access_token:` and use a new Databricks PAT from your Databricks user settings.
+
+#### How to get a Databricks personal access token
+1. Log into your Databricks workspace.
+2. Click your user icon in the top-right corner.
+3. Choose **User Settings** or **Account Settings**.
+4. Find the **Access Tokens** tab.
+5. Create a new token, copy it immediately, and paste it into `profiles.yml`.
+
+> Important: copy the token once. Databricks only shows it one time.
+
+If you do not have permission to create a PAT, ask your Databricks administrator or data team to create one for you.
 
 ### Clear uv Cache
 ```powershell
